@@ -22,7 +22,7 @@ to stop de server.
 For testing the stack, download [Kafka binaries](https://kafka.apache.org/downloads) and save to `/opt/kafka`.  Then, go to `/opt/kafka/bin` folder and create a topic for testing:
 
 ```shell
-kafka-topics --create --bootstrap-server <<ip-adress-in-.env-file>>:9092 --replication-factor 1 --partitions 1 --topic numtest
+kafka-topics.sh --create --bootstrap-server <<ip-adress-in-.env-file>>:9092 --replication-factor 1 --partitions 1 --topic numtest
 ```
 
 Now you can test everything with the simple `producer.py` and `consumer.py`in the root folder of ths project. First of all install requirements:

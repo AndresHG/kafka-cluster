@@ -19,7 +19,7 @@ docker-compose down
 to stop de server.
 
 ## Test
-For testing the stack, download [Kafka binaries]() and save to `/opt/kafka`.  Then, go to `/opt/kafka/bin` folder and create a topic for testing:
+For testing the stack, download [Kafka binaries](https://kafka.apache.org/downloads) and save to `/opt/kafka`.  Then, go to `/opt/kafka/bin` folder and create a topic for testing:
 
 ```shell
 kafka-topics --create --bootstrap-server <<ip-adress-in-.env-file>>:9092 --replication-factor 1 --partitions 1 --topic numtest

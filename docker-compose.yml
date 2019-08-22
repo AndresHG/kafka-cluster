@@ -49,6 +49,7 @@ services:
       KAFKA_LISTENERS: LISTENER_DOCKER_INTERNAL://kafka1:19092,LISTENER_DOCKER_EXTERNAL://:9092
       KAFKA_ZOOKEEPER_CONNECT: "zoo1:2181,zoo2:2182,zoo3:2183"
       KAFKA_BROKER_ID: 1
+      KAFKA_CREATE_TOPICS: ${TOPIC}:1:2
       # KAFKA_LOG4J_LOGGERS: "kafka.controller=INFO,kafka.producer.async.DefaultEventHandler=INFO,state.change.logger=INFO"
     depends_on:
       - zoo1

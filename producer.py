@@ -7,8 +7,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-port = "9092"
-adress = os.getenv("SERVER_IP") + ":" + port
+adress = os.getenv("SERVER_IP") + ":" + os.getenv("PORT")
 
 producer = KafkaProducer(bootstrap_servers=[adress],
                          value_serializer=lambda x: 

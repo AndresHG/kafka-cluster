@@ -23,7 +23,9 @@ topic = os.getenv("TOPIC", 'test')
 def show_webcam(mirror=False, rotate=0):
 
     producer = KafkaProducer(bootstrap_servers=os.getenv('SERVER-IP', 'localhost') + ':' + os.getenv('PORT', '9092'))
+    print("Conectado al servidor kafka.")
     cam = cv2.VideoCapture(0)
+    print("Conectado a la camara.")
 
     while True:
         #cam.set(3, 1920)
@@ -38,7 +40,7 @@ def show_webcam(mirror=False, rotate=0):
 
         # img = cv2.resize(img, (1920, 1080))
         h, w, rrr = img.shape
-        print('I am sending: {}, w: {}, h: {}'.format(datetime.now(), w, h))
+        # print('I am sending: {}, w: {}, h: {}'.format(datetime.now(), w, h))
 
         tm = datetime.now()
 
@@ -68,4 +70,7 @@ def show_webcam(mirror=False, rotate=0):
 
 
 if __name__ == '__main__':
-    show_webcam(mirror=False, rotate=0)
+    try:
+        show_webcam(mirror=False, rotate=0)
+    except KeyboardInterrupt:
+        print("Ha habdo un error en la ejecución.")
